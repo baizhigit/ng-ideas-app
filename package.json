@@ -19,6 +19,13 @@
     "@angular/platform-browser": "~8.1.0",
     "@angular/platform-browser-dynamic": "~8.1.0",
     "@angular/router": "~8.1.0",
+    "@ngrx/effects": "^8.2.0",
+    "@ngrx/router-store": "^8.2.0",
+    "@ngrx/store": "^8.2.0",
+    "@ngrx/store-devtools": "^8.2.0",
+    "font-awesome": "^4.7.0",
+    "primeicons": "^2.0.0",
+    "primeng": "^8.0.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
