@@ -26,6 +26,12 @@ export class AuthService {
     return this.auth('register', data);
   }
 
+  whoami() {
+    return this.http.get(`${this.api}/whoami`, {
+      headers: { authorization: `Bearer ${this.token}` }
+    });
+  }
+
   get token(): string {
     return localStorage.getItem('idea_token');
   }
