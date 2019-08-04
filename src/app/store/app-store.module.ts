@@ -4,9 +4,9 @@ import { StoreModule, ActionReducerMap } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 
-import { errorReducer, ErrorState } from './reducers/errors.reducer';
-import { AuthEffects } from './effects/auth.effects';
-import { AuthState, authReducer } from './reducers/auth.reducer';
+import { errorReducer, ErrorState } from '@app/store/reducers/errors.reducer';
+import { AuthEffects } from '@app/store/effects/auth.effects';
+import { AuthState, authReducer } from '@app/store/reducers/auth.reducer';
 
 export interface AppState {
   error: ErrorState;

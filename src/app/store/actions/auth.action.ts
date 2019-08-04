@@ -21,7 +21,7 @@ export class RegisterUser implements Action {
 
 export class SetInitialUser implements Action {
   readonly type = AuthActionTypes.SET_INITIAL_USER;
-  constructor(public payload: AuthDTO) {}
+  constructor() {}
 }
 
 export class SetCurrentUser implements Action {

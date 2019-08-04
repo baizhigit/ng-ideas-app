@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
 import { environment } from '@env/environment';
 import { AuthType, AuthDTO } from '@app/models/auth';
@@ -15,7 +16,12 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   private auth(authType: AuthType, data: AuthDTO): Observable<User> {
-    return this.http.post<User>(`${this.api}/${authType}`, data);
+    return this.http.post<User>(`${this.api}/${authType}`, data).pipe(
+      mergeMap((user: User) => {
+        this.token = user.token;
+        return of(user);
+      })
+    );
   }
 
   login(data: AuthDTO): Observable<User> {
